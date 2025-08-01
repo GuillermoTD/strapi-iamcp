@@ -14,17 +14,20 @@
     "header": {
       "type": "component",
       "component": "shared.header",
-      "repeatable": false
+      "repeatable": false,
+      "required": true
     },
     "banner": {
       "type": "component",
       "component": "shared.banner",
-      "repeatable": false
+      "repeatable": false,
+      "required": true
     },
     "footer": {
       "type": "component",
       "component": "shared.footer",
-      "repeatable": false
+      "repeatable": false,
+      "required": true
     }
   }
 }

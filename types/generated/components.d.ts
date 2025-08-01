@@ -7,7 +7,7 @@ export interface ButtonsButton extends Struct.ComponentSchema {
   };
   attributes: {
     href: Schema.Attribute.String;
-    label: Schema.Attribute.String;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -66,7 +66,7 @@ export interface SharedHeader extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.Component<'buttons.button', false>;
-    logo: Schema.Attribute.Media<'images' | 'files', true> &
+    logo: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
   };
 }
