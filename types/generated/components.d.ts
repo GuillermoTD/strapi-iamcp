@@ -43,7 +43,8 @@ export interface SharedContactBlock extends Struct.ComponentSchema {
     displayName: 'contactBlock';
   };
   attributes: {
-    contact: Schema.Attribute.Component<'shared.contact', true>;
+    contacts: Schema.Attribute.Component<'shared.contact', true>;
+    title: Schema.Attribute.String;
   };
 }
 

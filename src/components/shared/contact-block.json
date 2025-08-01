@@ -5,7 +5,10 @@
   },
   "options": {},
   "attributes": {
-    "contact": {
+    "title": {
+      "type": "string"
+    },
+    "contacts": {
       "type": "component",
       "component": "shared.contact",
       "repeatable": true
