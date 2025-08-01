@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_banners",
+  "info": {
+    "displayName": "banner"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "header": {
+      "type": "string",
+      "required": true
+    },
+    "subheader": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

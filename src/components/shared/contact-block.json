@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_contact_blocks",
+  "info": {
+    "displayName": "contactBlock"
+  },
+  "options": {},
+  "attributes": {
+    "contact": {
+      "type": "component",
+      "component": "shared.contact",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
