@@ -23,6 +23,11 @@
       "repeatable": false,
       "required": true
     },
+    "tabs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tab.tab"
+    },
     "footer": {
       "type": "component",
       "component": "shared.footer",

@@ -1,5 +1,67 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksCard extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_cards';
+  info: {
+    displayName: 'card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    isReverse: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksImage extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_images';
+  info: {
+    displayName: 'image';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksText extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_texts';
+  info: {
+    displayName: 'text';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksTwoColumns extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_two_columns';
+  info: {
+    displayName: 'twoColumns';
+  };
+  attributes: {
+    textColumns: Schema.Attribute.Component<'blocks.text', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface BlocksVideo extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_videos';
+  info: {
+    displayName: 'video';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    video: Schema.Attribute.Media<'files' | 'videos'> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface ButtonsButton extends Struct.ComponentSchema {
   collectionName: 'components_buttons_buttons';
   info: {
@@ -75,6 +137,11 @@ export interface SharedHeader extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.card': BlocksCard;
+      'blocks.image': BlocksImage;
+      'blocks.text': BlocksText;
+      'blocks.two-columns': BlocksTwoColumns;
+      'blocks.video': BlocksVideo;
       'buttons.button': ButtonsButton;
       'shared.banner': SharedBanner;
       'shared.contact': SharedContact;
