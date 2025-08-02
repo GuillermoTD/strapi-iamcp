@@ -134,6 +134,20 @@ export interface SharedHeader extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSlider extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sliders';
+  info: {
+    displayName: 'slider';
+  };
+  attributes: {
+    slides: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    > &
+      Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -148,6 +162,7 @@ declare module '@strapi/strapi' {
       'shared.contact-block': SharedContactBlock;
       'shared.footer': SharedFooter;
       'shared.header': SharedHeader;
+      'shared.slider': SharedSlider;
     }
   }
 }
