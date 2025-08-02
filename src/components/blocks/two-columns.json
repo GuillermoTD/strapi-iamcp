@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_two_columns",
+  "info": {
+    "displayName": "twoColumns"
+  },
+  "options": {},
+  "attributes": {
+    "textColumns": {
+      "type": "component",
+      "component": "blocks.text",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}
