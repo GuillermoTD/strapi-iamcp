@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tabs",
+  "info": {
+    "singularName": "tab",
+    "pluralName": "tabs",
+    "displayName": "Tab"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.video",
+        "blocks.two-columns",
+        "blocks.text",
+        "blocks.image",
+        "blocks.card"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean"
+    }
+  }
+}
