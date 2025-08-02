@@ -17,11 +17,16 @@
       "repeatable": false,
       "required": true
     },
+    "slider": {
+      "type": "component",
+      "component": "shared.slider",
+      "repeatable": false
+    },
     "banner": {
       "type": "component",
       "component": "shared.banner",
       "repeatable": false,
-      "required": true
+      "required": false
     },
     "tabs": {
       "type": "relation",
