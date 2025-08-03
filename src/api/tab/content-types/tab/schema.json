@@ -11,6 +11,9 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "title": {
+      "type": "string"
+    },
     "blocks": {
       "type": "dynamiczone",
       "components": [
@@ -20,12 +23,6 @@
         "blocks.image",
         "blocks.card"
       ]
-    },
-    "title": {
-      "type": "string"
-    },
-    "isActive": {
-      "type": "boolean"
     }
   }
 }
