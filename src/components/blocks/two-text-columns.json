@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_blocks_two_columns",
+  "collectionName": "components_blocks_two_text_columns",
   "info": {
-    "displayName": "twoColumns"
+    "displayName": "twoTextColumns"
   },
   "options": {},
   "attributes": {
@@ -9,7 +9,8 @@
       "type": "component",
       "component": "blocks.text",
       "repeatable": true,
-      "required": true
+      "required": true,
+      "max": 2
     }
   },
   "config": {}

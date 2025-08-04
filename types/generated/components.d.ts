@@ -23,8 +23,13 @@ export interface BlocksImage extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    hasDescription: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
+    isDescriptionCentered: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
   };
 }
 
@@ -34,19 +39,55 @@ export interface BlocksText extends Struct.ComponentSchema {
     displayName: 'text';
   };
   attributes: {
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    description: Schema.Attribute.RichText;
+    isTextCentered: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface BlocksTwoColumns extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_two_columns';
+export interface BlocksTimeline extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_timelines';
   info: {
-    displayName: 'twoColumns';
+    displayName: 'timeline';
+  };
+  attributes: {
+    textBlocks: Schema.Attribute.Component<'blocks.text', true>;
+  };
+}
+
+export interface BlocksTwoImageColumns extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_two_image_columns';
+  info: {
+    displayName: 'twoImageColumns';
+  };
+  attributes: {
+    imageColumns: Schema.Attribute.Component<'blocks.image', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+  };
+}
+
+export interface BlocksTwoTextColumns extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_two_text_columns';
+  info: {
+    displayName: 'twoTextColumns';
   };
   attributes: {
     textColumns: Schema.Attribute.Component<'blocks.text', true> &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
   };
 }
 
@@ -56,7 +97,22 @@ export interface BlocksVideo extends Struct.ComponentSchema {
     displayName: 'video';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    autoplay: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    hasControls: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    hasDescription: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    isDescriptionCentered: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    isMuted: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     video: Schema.Attribute.Media<'files' | 'videos'> &
       Schema.Attribute.Required;
   };
@@ -154,7 +210,9 @@ declare module '@strapi/strapi' {
       'blocks.card': BlocksCard;
       'blocks.image': BlocksImage;
       'blocks.text': BlocksText;
-      'blocks.two-columns': BlocksTwoColumns;
+      'blocks.timeline': BlocksTimeline;
+      'blocks.two-image-columns': BlocksTwoImageColumns;
+      'blocks.two-text-columns': BlocksTwoTextColumns;
       'blocks.video': BlocksVideo;
       'buttons.button': ButtonsButton;
       'shared.banner': SharedBanner;

@@ -14,9 +14,38 @@
         "files"
       ]
     },
+    "hasDescription": {
+      "type": "boolean",
+      "default": false
+    },
     "description": {
       "type": "text",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasDescription"
+            },
+            true
+          ]
+        }
+      },
       "required": true
+    },
+    "isDescriptionCentered": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasDescription"
+            },
+            true
+          ]
+        }
+      },
+      "required": true,
+      "default": false
     }
   },
   "config": {}

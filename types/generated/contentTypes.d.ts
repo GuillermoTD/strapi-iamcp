@@ -418,12 +418,15 @@ export interface ApiTabTab extends Struct.CollectionTypeSchema {
     blocks: Schema.Attribute.DynamicZone<
       [
         'blocks.video',
-        'blocks.two-columns',
+        'blocks.two-text-columns',
+        'blocks.two-image-columns',
+        'blocks.timeline',
         'blocks.text',
         'blocks.image',
         'blocks.card',
       ]
-    >;
+    > &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

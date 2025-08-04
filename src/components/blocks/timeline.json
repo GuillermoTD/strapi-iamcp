@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_timelines",
+  "info": {
+    "displayName": "timeline"
+  },
+  "options": {},
+  "attributes": {
+    "textBlocks": {
+      "type": "component",
+      "component": "blocks.text",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

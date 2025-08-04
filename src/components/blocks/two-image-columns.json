@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blocks_two_image_columns",
+  "info": {
+    "displayName": "twoImageColumns"
+  },
+  "options": {},
+  "attributes": {
+    "imageColumns": {
+      "type": "component",
+      "component": "blocks.image",
+      "repeatable": true,
+      "required": true,
+      "max": 2
+    }
+  },
+  "config": {}
+}
