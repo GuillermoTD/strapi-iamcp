@@ -10,8 +10,13 @@
       "required": true
     },
     "description": {
-      "type": "text",
-      "required": true
+      "type": "richtext",
+      "required": false
+    },
+    "isTextCentered": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   },
   "config": {}

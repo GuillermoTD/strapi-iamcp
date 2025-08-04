@@ -14,8 +14,64 @@
         "videos"
       ]
     },
+    "hasDescription": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
     "description": {
-      "type": "text"
+      "type": "text",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasDescription"
+            },
+            true
+          ]
+        }
+      },
+      "required": true
+    },
+    "isDescriptionCentered": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasDescription"
+            },
+            true
+          ]
+        }
+      },
+      "required": true,
+      "default": false
+    },
+    "autoplay": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "isMuted": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "autoplay"
+            },
+            true
+          ]
+        }
+      },
+      "required": true,
+      "default": false
+    },
+    "hasControls": {
+      "type": "boolean",
+      "required": true,
+      "default": true
     }
   },
   "config": {}

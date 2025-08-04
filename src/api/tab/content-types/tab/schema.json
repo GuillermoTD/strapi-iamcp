@@ -18,11 +18,14 @@
       "type": "dynamiczone",
       "components": [
         "blocks.video",
-        "blocks.two-columns",
+        "blocks.two-text-columns",
+        "blocks.two-image-columns",
+        "blocks.timeline",
         "blocks.text",
         "blocks.image",
         "blocks.card"
-      ]
+      ],
+      "required": true
     }
   }
 }
