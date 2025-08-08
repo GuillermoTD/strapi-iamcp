@@ -175,6 +175,10 @@ export interface SharedFooter extends Struct.ComponentSchema {
     contactInfo: Schema.Attribute.Component<'shared.contact-block', false>;
     logo: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
+    termsOfService: Schema.Attribute.Component<
+      'shared.terms-of-service',
+      false
+    >;
   };
 }
 
@@ -204,6 +208,17 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTermsOfService extends Struct.ComponentSchema {
+  collectionName: 'components_shared_terms_of_services';
+  info: {
+    displayName: 'termsOfService';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    pdf: Schema.Attribute.Media<'files'> & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -221,6 +236,7 @@ declare module '@strapi/strapi' {
       'shared.footer': SharedFooter;
       'shared.header': SharedHeader;
       'shared.slider': SharedSlider;
+      'shared.terms-of-service': SharedTermsOfService;
     }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_terms_of_services",
+  "info": {
+    "displayName": "termsOfService"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

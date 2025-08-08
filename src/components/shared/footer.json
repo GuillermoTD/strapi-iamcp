@@ -18,6 +18,11 @@
       "type": "component",
       "component": "shared.contact-block",
       "repeatable": false
+    },
+    "termsOfService": {
+      "type": "component",
+      "component": "shared.terms-of-service",
+      "repeatable": false
     }
   },
   "config": {}
